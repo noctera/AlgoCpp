@@ -8,8 +8,9 @@ project(AlgoCpp
 find_package( OpenCV REQUIRED )
 include(CTest)
 
-option(ALGOCPP_BUILD_EXAMPLES "Enables example building" ON)
-option(ALGOCPP_BUILD_TESTS "Enables tests building" ON)
+SET(ALGOCPP_BUILD_EXAMPLES ON CACHE BOOL "Enables example building" FORCE)
+SET(ALGOCPP_BUILD_TESTS ON CACHE BOOL "Enables tests building" FORCE)
+SET(ALGOCPP_BUILD_BENCHMARK OFF CACHE BOOL "Enables benchmark building" FORCE)
 
 add_library(${PROJECT_NAME} INTERFACE)
 
