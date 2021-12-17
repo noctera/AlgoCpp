@@ -14,7 +14,7 @@ void bubbleSort(T& input) {
     // count if changes were made in an iteration to indicate if everything is in right order
     int changesPerIteration = 0;
     while (true) {
-        for (int i = 0; i < input.size(); ++i) {
+        for (int i = 0; i < input.size() - 1; ++i) {
             if (input[i] > input[i + 1]) {
                 std::swap(input[i], input[i + 1]);
                 ++changesPerIteration;
