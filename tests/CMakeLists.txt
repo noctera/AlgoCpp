@@ -10,6 +10,7 @@ add_executable(
 	${PROJECT_NAME}
 	"main.cpp"
 	"sorting/bubbleSort.cpp"
+	"search/linearSearch.cpp"
 	${BenchmarkFiles}
 	
 )
