@@ -9,7 +9,7 @@ endif()
 add_executable(
 	${PROJECT_NAME}
 	"main.cpp"
-	"BubbleSort.cpp"
+	"sorting/bubbleSort.cpp"
 	${BenchmarkFiles}
 	
 )

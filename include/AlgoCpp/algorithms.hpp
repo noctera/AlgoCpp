@@ -2,4 +2,4 @@
 
 #include <iostream>
 
-#include "./Algorithms/Sorting/BubbleSort.hpp"
+#include "./algorithms/sorting/bubbleSort.hpp"
