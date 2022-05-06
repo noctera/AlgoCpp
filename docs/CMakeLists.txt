@@ -58,7 +58,7 @@ if(DOXYGEN_FOUND)
 
   # doc build only target, target is not in default build, so it must be triggered explicitly
   add_custom_target(
-    doc
+    docs
     COMMAND ${DOXYGEN_EXECUTABLE} ${doxyfile}
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     COMMENT "Generating API documentation with Doxygen"
