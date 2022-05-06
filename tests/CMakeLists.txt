@@ -1,10 +1,23 @@
 cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 
-project(algocpp_tests)
+project(AlgoCppTests)
+
+# ---- Options ----
+option(ALGOCCP_BUILD_BENCHMARK "Enable benchmark" OFF)
+option(ENABLE_TEST_COVERAGE "Enable test coverage" OFF)
+option(TEST_INSTALLED_VERSION "Test the version found by find_package" OFF)
+
+# --- Import tools ----
+
+include(../cmake/tools.cmake)
+
+# ---- Dependencies ----
 
 if(ALGOCPP_BUILD_BENCHMARK)
 	set(BenchmarkFiles "Benchmark.cpp")
 endif()
+
+CPMAddPackage("gh:TheLartians/Format.cmake@1.7.0")
 
 add_executable(
 	${PROJECT_NAME}
@@ -15,15 +28,10 @@ add_executable(
 	
 )
 
-include(FetchContent)
-
-FetchContent_Declare(
-  Catch2
-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v2.13.6
+CPMAddPackage(
+  GITHUB_REPOSITORY catchorg/Catch2
+  VERSION 2.13.6
 )
-
-FetchContent_MakeAvailable(Catch2)
 
 target_link_libraries(
 	${PROJECT_NAME}
