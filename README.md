@@ -19,10 +19,10 @@ This is my repository with self implemented algorithms, written in C++.<br/>Curr
 
 int main() {
     std::vector<int> foo{1, 4, 5, 2, 3};
-	// check if int is in vector with lenear search
-  	if (algocpp::search::linearSearch(foo, 2)) {
-    	std::cout << "found" << std::endl;
-  	}
+    // check if int is in vector with lenear search
+    if (algocpp::search::linearSearch(foo, 2)) {
+        std::cout << "found" << std::endl;
+    }
 }
 ```
 
