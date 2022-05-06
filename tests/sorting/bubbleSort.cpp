@@ -1,6 +1,5 @@
 #define CATCH_CONFIG_ENABLE_BENCHMARKING
-#include "AlgoCpp/algorithms/sorting/bubbleSort.hpp"
-
+#include <AlgoCpp/algorithms/sorting/bubbleSort.hpp>
 #include <array>
 #include <catch2/catch.hpp>
 #include <iostream>
