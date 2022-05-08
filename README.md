@@ -1,22 +1,34 @@
-# steganography
+# AlgoCpp
 
-This is a single header "Least significant bit (LSB)" steganography lib to hide text in an image
+This is my repository with self implemented algorithms, written in C++.<br/>Currently available algorithms:
+
+```
+└── algorithms
+    ├── search
+    │   └── linear search
+    └── sorting
+        └── bubblesort
+```
 
 ## Example
 
 ```cpp
-#include <AlgoCpp/steganography.hpp>
+// single header include
+#include <AlgoCpp/algorithms.hpp>
 #include <iostream>
 
 int main() {
-    // hiding secret message
-    steg::leastSignificantBitEncode("/path_to_input_image/input.png", "/path_to_output_image/output.png", "My secret Message");
-
-    // decode message from manipulated picture
-    std::cout << steg::leastSignificantBitDecode("/path_to_manipulated_image/output.png") << std::endl;
+    std::vector<int> foo{1, 4, 5, 2, 3};
+    // check if int is in vector with lenear search
+    if (algocpp::search::linearSearch(foo, 2)) {
+        std::cout << "found" << std::endl;
+    }
 }
 ```
 
+## Requirements
+
+- C++17 compatible compiler
 
 ## Installation via Cmake
 
@@ -28,13 +40,54 @@ project(<your_project_name>)
 include(FetchContent)
 
 FetchContent_Declare(
-	CppSteg
-	GIT_REPOSITORY	https://github.com/noctera/CppSteg.git
+	AlgoCpp
+	GIT_REPOSITORY	https://github.com/noctera/AlgoCpp.git
 	GIT_TAG		origin/main
 )
-FetchContent_MakeAvailable(CppSteg)
+FetchContent_MakeAvailable(AlgoCpp)
 
 target_link_libraries(
 	<your_target_name>
-	PUBLIC CppSteg
+	PUBLIC AlgoCpp
 )
+```
+
+## Build the project
+
+### Build everything at once
+
+```bash
+cmake -S all -B build
+cmake --build build
+
+# docs need to be generated seperately
+cmake --build build/docs --target docs
+```
+
+### Build only the examples
+
+```bash
+cmake -S examples -B build/examples
+cmake --build build/examples
+```
+
+### Build only the tests
+
+```bash
+cmake -S tests -B build/tests
+cmake --build build/tests
+```
+
+### Build only the docs
+
+```bash
+cmake -S docs -B build/docs
+cmake --build build/docs --target docs
+```
+
+### Format the code
+
+```bash
+cmake -S all -B build
+cmake --build build --target fix-format
+```
