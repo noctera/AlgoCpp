@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.18 FATAL_ERROR)
 
 project(AlgoCppExample LANGUAGES CXX)
 
-# --- Import tools ----
-
-include(../cmake/tools.cmake)
-
 # ---- Dependencies ----
 
 include(../cmake/CPM.cmake)

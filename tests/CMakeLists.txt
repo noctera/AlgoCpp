@@ -4,17 +4,10 @@ project(AlgoCppTests)
 
 # ---- Options ----
 option(TEST_INSTALLED_VERSION "Test the version found by find_package" OFF)
-# --- Import tools ----
-
-include(../cmake/tools.cmake)
 
 # ---- Dependencies ----
 
-if(ALGOCCP_BUILD_BENCHMARK)
-  set(BenchmarkFiles "benchmark.cpp")
-endif()
-
-CPMAddPackage("gh:TheLartians/Format.cmake@1.7.0")
+CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
 
 CPMAddPackage(GITHUB_REPOSITORY catchorg/Catch2 VERSION 2.13.6)
 
